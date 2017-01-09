@@ -13,7 +13,7 @@ const stats = _.map(rankings, (r) => {
     const points = 0 + r.stat;
     const efficiency = perfectScore - points;
     const efficiencyPercent = points / perfectScore;
-    const estRoundsPlayed = Math.round(efficiencyPercent * roundsPlayed);
+    const estRoundsPlayed = Math.ceil(efficiencyPercent * roundsPlayed);
     const estRoundsMissed = roundsPlayed - estRoundsPlayed;
     return {
         name: r.name,
