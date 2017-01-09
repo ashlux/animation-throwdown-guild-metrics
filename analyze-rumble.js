@@ -1,12 +1,9 @@
 const _ = require("lodash");
-
-// When playing in the browser, the JSON comes from:
-// https://cb-live.synapse-games.com/api.php?message=getRankings&user_id=XXXXXX
-const rumble = require("./rumble.json");
+const rumble = require("./rumble.json"); // See README
 
 const rankings = rumble.rankings.data;
 
-const roundsPlayed = 10;
+const roundsPlayed = 10; // Change this to the current rumble round
 const maxPointsPerPlay = 100;
 const maxPointsPerRound = maxPointsPerPlay * roundsPlayed; // 1000
 const perfectScore = roundsPlayed * maxPointsPerRound;
