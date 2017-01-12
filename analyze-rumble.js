@@ -3,18 +3,18 @@ const rumble = require("./rumble.json"); // See README
 
 const rankings = rumble.rankings.data;
 
-const roundsPlayed = 10; // Change this to the current rumble round
+const roundsPlayed = 18; // Change this to the current rumble round
 const maxPointsPerPlay = 100;
-const maxPointsPerRound = maxPointsPerPlay * roundsPlayed; // 1000
+const maxPointsPerRound = maxPointsPerPlay * 10;
 const perfectScore = roundsPlayed * maxPointsPerRound;
 
 console.info(`Perfect score is ${perfectScore}.`);
 const stats = _.map(rankings, (r) => {
-    const points = 0 + r.stat;
-    const efficiency = perfectScore - points;
-    const efficiencyPercent = points / perfectScore;
-    const estRoundsPlayed = Math.ceil(efficiencyPercent * roundsPlayed);
-    const estRoundsMissed = roundsPlayed - estRoundsPlayed;
+    const points = 0 + r.stat; // 17957
+    const efficiency = perfectScore - points; // 18000 - 17957 = 43
+    const efficiencyPercent = points / perfectScore; // 17957 / 18000 = .997611111
+    const estRoundsPlayed = Math.ceil(efficiencyPercent * roundsPlayed); // .997611111 * 18 = 17.956999998 = 18
+    const estRoundsMissed = roundsPlayed - estRoundsPlayed; // 18 - 18
     return {
         name: r.name,
         points,
