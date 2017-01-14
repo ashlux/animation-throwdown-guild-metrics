@@ -1,5 +1,5 @@
 const _ = require("lodash");
-const rumble = require("./rumble.json"); // See README
+const rumble = require("./data/rumble.json"); // See README
 
 const rankings = rumble.rankings.data;
 
